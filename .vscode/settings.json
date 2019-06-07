@@ -1,0 +1,8 @@
+{
+    "prettier.jsxBracketSameLine": true,
+    "prettier.useTabs": true,
+    "javascript.format.enable": false,
+    "html.validate.styles": false,
+    "html.format.enable": false,
+    "editor.formatOnSave": true
+}
