@@ -92,11 +92,11 @@ export default class TodoList extends React.Component {
 		}));
 	};
 
-	handleEdit = todo => {
-		this.setState(state => ({
-			input: state.input.filter()
-		}));
-	};
+	// handleEdit = todo => {
+	// 	this.setState(state => ({
+	// 		input: state.input.filter()
+	// 	}));
+	// };
 
 	removeAllComplete = () => {
 		this.setState(state => ({
