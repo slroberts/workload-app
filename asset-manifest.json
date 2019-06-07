@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/workload-app/static/css/main.3f65457c.chunk.css",
-    "main.js": "/workload-app/static/js/main.a63f862d.chunk.js",
-    "main.js.map": "/workload-app/static/js/main.a63f862d.chunk.js.map",
+    "main.js": "/workload-app/static/js/main.bc79b426.chunk.js",
+    "main.js.map": "/workload-app/static/js/main.bc79b426.chunk.js.map",
     "runtime~main.js": "/workload-app/static/js/runtime~main.bd0bd3f6.js",
     "runtime~main.js.map": "/workload-app/static/js/runtime~main.bd0bd3f6.js.map",
     "static/js/2.427aa0ae.chunk.js": "/workload-app/static/js/2.427aa0ae.chunk.js",
     "static/js/2.427aa0ae.chunk.js.map": "/workload-app/static/js/2.427aa0ae.chunk.js.map",
     "index.html": "/workload-app/index.html",
-    "precache-manifest.a9060cf997a35fb59b1094dd15be6615.js": "/workload-app/precache-manifest.a9060cf997a35fb59b1094dd15be6615.js",
+    "precache-manifest.2586457e252ae592b9a214c4fee21efb.js": "/workload-app/precache-manifest.2586457e252ae592b9a214c4fee21efb.js",
     "service-worker.js": "/workload-app/service-worker.js",
     "static/css/main.3f65457c.chunk.css.map": "/workload-app/static/css/main.3f65457c.chunk.css.map"
   }

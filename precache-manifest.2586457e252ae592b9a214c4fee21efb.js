@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d1b93cf03d72167c7e5efc31e01026ca",
+    "revision": "d2bfc5652526b2427f3e603338397934",
     "url": "/workload-app/index.html"
   },
   {
-    "revision": "debf3def8647aceddfc3",
+    "revision": "4281f4316a45a98670ec",
     "url": "/workload-app/static/css/main.3f65457c.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/workload-app/static/js/2.427aa0ae.chunk.js"
   },
   {
-    "revision": "debf3def8647aceddfc3",
-    "url": "/workload-app/static/js/main.a63f862d.chunk.js"
+    "revision": "4281f4316a45a98670ec",
+    "url": "/workload-app/static/js/main.bc79b426.chunk.js"
   },
   {
     "revision": "45bda1e85a6807e3d9f3",
