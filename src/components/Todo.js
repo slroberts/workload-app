@@ -2,14 +2,10 @@ import React from "react";
 import TodoStatus from "./TodoStatus";
 
 export default class Todo extends React.Component {
-	constructor(props) {
-		super(props);
-
-		this.state = {
-			meta: Date(),
-			isEditing: false
-		};
-	}
+	state = {
+		meta: Date(),
+		isInEditMode: false
+	};
 
 	componentDidMount() {
 		this.setState({
@@ -17,53 +13,47 @@ export default class Todo extends React.Component {
 		});
 	}
 
-	handleEdit = event => {
-		this.props.todo.input = this.setState({
-			isEditing: true,
-			changedTodoText: this.props.todo.input
+	changeEditMode = () => {
+		this.setState({
+			isInEditMode: !this.state.isInEditMode
 		});
 	};
 
-	handleEditUpdate = event => {
+	handleEditUpdate = () => {
 		this.setState({
-			isEditing: false
+			isInEditMode: false,
+			changedTodoText: this.refs.newTextInput.value
 		});
 	};
 
-	handleSaveChange = event => {
-		let _changedTodoText = event.target.value;
-		this.setState({
-			changedTodoText: _changedTodoText
-		});
+	editViewMode = () => {
+		return (
+			<input
+				className="is-editing"
+				defaultValue={this.state.changedTodoText}
+				ref="newTextInput"
+			/>
+		);
+	};
+
+	defaultViewMode = () => {
+		return (
+			<div
+				className="list-title"
+				onClick={this.props.toggleComplete}
+				style={{ opacity: this.props.todo.completed ? 0.5 : "" }}>
+				{this.state.changedTodoText}
+			</div>
+		);
 	};
 
 	render() {
-		let viewStyle = [];
-		let editStyle = [];
-
-		this.state.isEditing
-			? (viewStyle.display = "none")
-			: (editStyle.display = "none");
-
 		return (
 			<li className="todo-list-item">
-				<div
-					className="list-title"
-					onClick={this.props.toggleComplete}
-					// style={{ opacity: this.props.todo.completed ? 0.5 : "" }}
-					style={viewStyle}>
-					{this.state.changedTodoText}
-				</div>
+				{this.state.isInEditMode ? this.editViewMode() : this.defaultViewMode()}
 
-				<input
-					className="is-editing"
-					style={editStyle}
-					value={this.state.changedTodoText}
-					onChange={this.handleSaveChange}
-				/>
-
-				{this.state.isEditing === false ? (
-					<button className="edit" onClick={this.handleEdit}>
+				{this.state.isInEditMode === false ? (
+					<button className="edit" onClick={this.changeEditMode}>
 						edit <i className="far fa-edit" />
 					</button>
 				) : (
@@ -84,30 +74,3 @@ export default class Todo extends React.Component {
 		);
 	}
 }
-
-// export default props => (
-// 	<li className="todo-list-item">
-// 		<div
-// 			className="list-title"
-// 			onClick={props.toggleComplete}
-// 			// style={{ opacity: props.todo.completed ? 0.5 : "" }}
-// 			style={props.viewStyle}>
-// 			{props.todo.input}
-// 		</div>
-
-// 		<input style={props.editStyle} value={props.todo.input} />
-
-// 		<button className="edit" onClick={props.onEdit}>
-// 			edit <i className="far fa-edit" />
-// 		</button>
-// 		<button className="notes">
-// 			notes <i className="far fa-sticky-note" />
-// 		</button>
-// 		<button className="delete" onClick={props.onDelete}>
-// 			delete <i className="far fa-trash-alt" />
-// 		</button>
-// 		<div className="meta">{props.meta}</div>
-
-// 		<TodoStatus />
-// 	</li>
-// );
