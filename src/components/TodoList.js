@@ -3,12 +3,15 @@ import TodoForm from "./TodoForm";
 import Todo from "./Todo";
 
 export default class TodoList extends React.Component {
-	state = {
-		todos: [],
-		todoToShow: "all",
-		toggleAllComplete: true,
-		meta: Date()
-	};
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			todos: [],
+			todoToShow: "all",
+			toggleAllComplete: true
+		};
+	}
 
 	componentDidMount() {
 		this.hydrateStateWithLocalStorage();
@@ -92,12 +95,6 @@ export default class TodoList extends React.Component {
 		}));
 	};
 
-	// handleEdit = todo => {
-	// 	this.setState(state => ({
-	// 		input: state.input.filter()
-	// 	}));
-	// };
-
 	removeAllComplete = () => {
 		this.setState(state => ({
 			todos: state.todos.filter(todo => !todo.completed)
@@ -134,9 +131,7 @@ export default class TodoList extends React.Component {
 							key={todo.id}
 							toggleComplete={() => this.toggleComplete(todo.id)}
 							onDelete={() => this.handleDelete(todo.id)}
-							onEdit={() => this.handleEdit(todo.id)}
 							todo={todo}
-							meta={this.state.meta}
 						/>
 					))}
 				</ul>
