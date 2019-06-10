@@ -1,10 +1,19 @@
+$sm-screen: 414px;
+
+// Screen Size Mixins
+@mixin sm {
+	@media (max-width: #{$sm-screen}) {
+		@content;
+	}
+}
+
 body {
 	background-color: #f4f4f4;
 }
 
 .todo-container {
 	.todo-input-container {
-		padding: 6vw;
+		padding: 8vw;
 
 		background: linear-gradient(135deg, #3c61f9, #04befe);
 		background: -webkit-linear-gradient(135deg, #3c61f9, #04befe);
@@ -29,6 +38,7 @@ body {
 		}
 
 		.todo-input {
+			box-sizing: border-box;
 			width: 24vw;
 			max-width: 20rem;
 			min-width: 16rem;
@@ -37,6 +47,11 @@ body {
 			border-radius: 0.35rem;
 			border: none;
 			font-size: 1rem;
+
+			@include sm {
+				width: 100%;
+				margin-bottom: 1rem;
+			}
 		}
 
 		.todo-button {
@@ -53,7 +68,8 @@ body {
 		position: absolute;
 		width: 92vw;
 		left: 0;
-		margin-top: 7rem;
+		margin-top: 8rem;
+		margin-bottom: 7rem;
 		background-color: #f4f4f4;
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(24rem, auto));
@@ -66,11 +82,17 @@ body {
 
 		text-align: left;
 
+		@include sm {
+			grid-template-columns: 1fr;
+			margin-top: 3rem;
+			margin-bottom: 4rem;
+		}
+
 		.todo-list-item {
 			background-color: #ffffff;
 			border: solid thin #e6e6e6;
 			border-radius: 0.5vw;
-			padding: 1.5vw;
+			padding: 2vw;
 
 			.list-title {
 				margin-bottom: 0.5rem;
@@ -109,7 +131,7 @@ body {
 			.edit,
 			.notes,
 			.save {
-				margin-right: 1rem;
+				margin-right: 1vw;
 			}
 
 			.meta {
@@ -140,30 +162,52 @@ body {
 
 	.notifications {
 		position: fixed;
-		display: flex;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
 		width: 92vw;
 		left: 0;
 		bottom: 0;
-		padding: 1vw 4vw;
-		justify-content: flex-start;
+		padding: 1.5vw 4vw;
+		justify-content: center;
 		background-color: #ffffff;
 		font-size: 0.9rem;
+		box-shadow: 2px 2px 8px #dedede;
+
+		@include sm {
+			grid-template-columns: 1fr;
+		}
 
 		.todo-counter {
 			font-weight: bold;
-			// color: #0034c3;
+			justify-self: flex-start;
+			padding-left: 1rem;
+
+			@include sm {
+				justify-self: center;
+				margin-bottom: 0.25em;
+			}
 		}
 
-		button {
-			outline: none;
-			border: none;
-			background: transparent;
-			color: #9b9b9b;
-			font-size: 0.85rem;
-			margin-left: 1rem;
+		.filters {
+			justify-self: flex-end;
+			padding-right: 1rem;
 
-			&:focus {
-				color: #0034c3;
+			@include sm {
+				display: none;
+			}
+
+			button {
+				outline: none;
+				border: none;
+				background: transparent;
+				color: #9b9b9b;
+				font-size: 0.85rem;
+				margin-left: 1rem;
+
+				&:focus {
+					color: #0034c3;
+					font-weight: bold;
+				}
 			}
 		}
 	}
