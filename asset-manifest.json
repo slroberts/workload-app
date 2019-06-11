@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/workload-app/static/css/main.bad292ca.chunk.css",
-    "main.js": "/workload-app/static/js/main.e00b4bd9.chunk.js",
-    "main.js.map": "/workload-app/static/js/main.e00b4bd9.chunk.js.map",
+    "main.css": "/workload-app/static/css/main.418f1ea6.chunk.css",
+    "main.js": "/workload-app/static/js/main.97bb2f0f.chunk.js",
+    "main.js.map": "/workload-app/static/js/main.97bb2f0f.chunk.js.map",
     "runtime~main.js": "/workload-app/static/js/runtime~main.bd0bd3f6.js",
     "runtime~main.js.map": "/workload-app/static/js/runtime~main.bd0bd3f6.js.map",
-    "static/js/2.70280c88.chunk.js": "/workload-app/static/js/2.70280c88.chunk.js",
-    "static/js/2.70280c88.chunk.js.map": "/workload-app/static/js/2.70280c88.chunk.js.map",
+    "static/js/2.5b91c79c.chunk.js": "/workload-app/static/js/2.5b91c79c.chunk.js",
+    "static/js/2.5b91c79c.chunk.js.map": "/workload-app/static/js/2.5b91c79c.chunk.js.map",
     "index.html": "/workload-app/index.html",
-    "precache-manifest.8a82ba0c5355ca589461b70176ceeefc.js": "/workload-app/precache-manifest.8a82ba0c5355ca589461b70176ceeefc.js",
+    "precache-manifest.e51eff0e5931837351e345acf0af3c0b.js": "/workload-app/precache-manifest.e51eff0e5931837351e345acf0af3c0b.js",
     "service-worker.js": "/workload-app/service-worker.js",
-    "static/css/main.bad292ca.chunk.css.map": "/workload-app/static/css/main.bad292ca.chunk.css.map"
+    "static/css/main.418f1ea6.chunk.css.map": "/workload-app/static/css/main.418f1ea6.chunk.css.map"
   }
 }
