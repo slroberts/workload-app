@@ -1,5 +1,5 @@
 import React from "react";
-import TodoStatus from "./TodoStatus";
+// import TodoStatus from "./TodoStatus";
 
 export default class Todo extends React.Component {
 	state = {
@@ -69,7 +69,7 @@ export default class Todo extends React.Component {
 				</button>
 				<div className="meta">{this.state.meta}</div>
 
-				<TodoStatus />
+				{/* <TodoStatus /> */}
 			</li>
 		);
 	}

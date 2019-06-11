@@ -68,6 +68,18 @@ export default class TodoList extends React.Component {
 		}));
 	};
 
+	updateTodoToShow = s => {
+		this.setState({
+			todoToShow: s
+		});
+	};
+
+	handleDelete = id => {
+		this.setState(state => ({
+			todos: state.todos.filter(todo => todo.id !== id)
+		}));
+	};
+
 	toggleComplete = id => {
 		this.setState(state => ({
 			todos: state.todos.map(todo => {
@@ -80,18 +92,6 @@ export default class TodoList extends React.Component {
 					return todo;
 				}
 			})
-		}));
-	};
-
-	updateTodoToShow = s => {
-		this.setState({
-			todoToShow: s
-		});
-	};
-
-	handleDelete = id => {
-		this.setState(state => ({
-			todos: state.todos.filter(todo => todo.id !== id)
 		}));
 	};
 
@@ -121,6 +121,9 @@ export default class TodoList extends React.Component {
 		} else if (this.state.todoToShow === "completed") {
 			todos = this.state.todos.filter(todo => todo.completed);
 		}
+		// else if (this.state.todos.todoToShow === "queued") {
+		// 	todos = this.state.todos.filter(todo => todo.queued);
+		// }
 
 		return (
 			<div>
@@ -149,6 +152,9 @@ export default class TodoList extends React.Component {
 							<button onClick={() => this.updateTodoToShow("completed")}>
 								Completed
 							</button>
+							{/* <button onClick={() => this.updateTodoToShow("queued")}>
+								Queued
+							</button> */}
 							{/* <button onClick={this.toggleAllComplete}>
 								Toggle All: {`${this.state.toggleAllComplete}`}
 							</button> */}
